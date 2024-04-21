@@ -1,0 +1,23 @@
+﻿@model HonaEyeWear.Models.PropertyValue
+
+@{
+    ViewData["Title"] = "Edit PropertyValue";
+}
+@using (Html.BeginForm("Edit", "ManagePropertyValue", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Thuộc Tính</label>
+        @Html.DropDownListFor(model => model.PropertyId, new SelectList(ViewBag.Properties, "Id", "Name"), "Chọn thuộc tính", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Value)
+        @Html.TextBoxFor(model => model.Value, new { @class = "form-control", @Value = Model.Value })
+        @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+}
