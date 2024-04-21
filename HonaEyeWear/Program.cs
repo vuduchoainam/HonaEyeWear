@@ -1,5 +1,7 @@
 ﻿using HonaEyeWear.Data;
 using HonaEyeWear.Models;
+using HonaEyeWear.Repositories;
+using HonaEyeWear.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -20,6 +22,19 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     })
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddTransient<ApplicationDbContext>();
+//khai báo repository
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+//khai báo các service
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+
+
+
+
+
+
+
 
 var app = builder.Build();
 
