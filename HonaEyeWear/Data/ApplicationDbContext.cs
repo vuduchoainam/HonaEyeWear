@@ -11,7 +11,16 @@ namespace HonaEyeWear.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
         }
-
+        public DbSet<Category> categories { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<Discount> discounts { get; set; }
+        public DbSet<Order> orders { get; set; }
+        public DbSet<OrderDetail> orderDetails { get; set; }
+        public DbSet<Blog> blogs { get; set; }
+        public DbSet<WishList> wishLists { get; set; }
+        public DbSet<Property> properties { get; set; }
+        public DbSet<PropertyValue> propertyValues { get; set; }
+        public DbSet<PropertyProduct> propertyProducts { get; set; }
         public DbSet<Role> roles { get; set; }
 
 
