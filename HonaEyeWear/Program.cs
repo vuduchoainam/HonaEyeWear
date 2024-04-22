@@ -29,6 +29,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 //khai báo các service
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<IPropertyValueService, PropertyValueService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
 
