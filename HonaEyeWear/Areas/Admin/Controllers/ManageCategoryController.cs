@@ -2,7 +2,6 @@
 using HonaEyeWear.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Logging;
-using Slugify;
 using System;
 using System.Globalization;
 using System.Text;
@@ -15,11 +14,9 @@ namespace HonaEyeWear.Areas.Admin.Controllers
     public class ManageCategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
-        private readonly SlugHelper _slugHelper;
         public ManageCategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
-            _slugHelper = new SlugHelper();
         }
         private string RemoveVietnameseDiacritics(string str)
         {
@@ -113,7 +110,7 @@ namespace HonaEyeWear.Areas.Admin.Controllers
 
                 // Cập nhật các trường Name, Slug, ParentId, và UpdatedAt
                 oldCategory.Name = updatedCategory.Name;
-                oldCategory.Slug = _slugHelper.GenerateSlug(updatedCategory.Name);
+                oldCategory.Slug = GenerateSlug(updatedCategory.Name);
                 oldCategory.ParentId = updatedCategory.ParentId;
                 oldCategory.UpdatedAt = DateTime.Now;
                 // Lưu các thay đổi vào cơ sở dữ liệu

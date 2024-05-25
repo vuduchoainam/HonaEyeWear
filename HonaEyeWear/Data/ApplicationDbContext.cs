@@ -22,6 +22,8 @@ namespace HonaEyeWear.Data
         public DbSet<PropertyValue> propertyValues { get; set; }
         public DbSet<PropertyProduct> propertyProducts { get; set; }
         public DbSet<Role> roles { get; set; }
+        public DbSet<ProductImage> productImages { get; set; }
+
 
 
 
