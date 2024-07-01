@@ -30,14 +30,9 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<IPropertyValueService, PropertyValueService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
-
-
-
-
-
-
-
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductImageService, ProductImageService>();
+builder.Services.AddScoped<IPropertyProductService, PropertyProductService>();
 
 var app = builder.Build();
 

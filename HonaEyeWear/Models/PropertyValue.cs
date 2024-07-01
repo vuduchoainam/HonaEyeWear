@@ -11,10 +11,7 @@ namespace HonaEyeWear.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Giá trị không được để trống")]
-        public string Value { get; set; }
-
-        [Display(Name = "Property")]
-        public int PropertyId { get; set; }
-        public Property? Property { get; set; }
+        public string Name { get; set; }
+        public ICollection<PropertyProduct>? PropertyProducts { get; set; }
     }
 }

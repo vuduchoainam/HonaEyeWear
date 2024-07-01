@@ -9,14 +9,13 @@ namespace HonaEyeWear.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [ForeignKey("Product")]
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
 
-        [ForeignKey("Property")]
+        public int PropertyValueId { get; set; }
+        public virtual PropertyValue PropertyValue { get; set; }
+
         public int PropertyId { get; set; }
         public virtual Property Property { get; set; }
-        public string Value { get; set; }
     }
 }

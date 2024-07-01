@@ -12,7 +12,6 @@ namespace HonaEyeWear.Models
         [Required(ErrorMessage = "Tên thuộc tính không được để trống")]
         [StringLength(150, ErrorMessage = "Không vượt quá 150 ký tự")]
         public string Name { get; set; }
-
-        public ICollection<PropertyValue>? PropertyValues { get; set; }
+        public ICollection<PropertyProduct>? PropertyProducts { get; set; }
     }
 }
